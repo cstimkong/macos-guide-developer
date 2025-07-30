@@ -8,7 +8,7 @@
 动态链接库 (``.dylib``)
 ----------------
 
-``Mach-O`` 文件中的动态链接库可以对应 ELF 文件类型中的 Shared Object (文件扩展名一般为 ``.so`` )。 ``Mach-O`` 文件中有两种动态链接库: ``dylib``  和 ``bundle`` ( 不同于目录结构的 Bundle)。 ``bundle`` 类型的文件扩展名可以为 ``.bundle``（但是容易和目录结构的 Bundle 混淆）或者直接使用 ``.so`` 。 
+``Mach-O`` 文件中的动态链接库可以对应 ELF 文件类型中的 Shared Object (文件扩展名一般为 ``.so`` )。 ``Mach-O`` 文件中有两种动态链接库: ``dylib``  和 ``bundle`` ( 不同于目录结构的 Bundle)。 ``bundle`` 类型的文件扩展名可以为 ``.bundle`` (但是容易和目录结构的 Bundle 混淆) 或者直接使用 ``.so`` 。 
 
 ``dylib`` 和 ``bundle`` 的实际差别非常小, 在动态加载时有细微差别。此外, ``dylib`` 一般会被公开使用, 而 ``bundle`` 一般只在一个 app 内部使用。
 
@@ -44,7 +44,9 @@ Bundle 是 macOS 和 iOS 中打包和分发软件的一种方式（一个 Bundle
 
 其中, ``MacOS`` 目录中包含具体的可执行文件 (一般和 ``.app`` 目录同名), ``Info.plist`` 包含该 Bundle 的一些基本信息, ``Resources`` 包含资源文件。
 
-* Framework, 可以视为动态链接库的进一步封装。一个典型的动态链接库的结构如下（以 Python 为例, Python 可以从 ``https://www.python.org`` 下载, 并安装到 ``/Library/Frameworks/Python.framework``）:
+* Framework, 可以视为动态链接库的进一步封装。一个典型的动态链接库的结构如下（以 Python 为例, Python 可以从 ``Python.org``_ 下载, 并安装到 ``/Library/Frameworks/Python.framework``）:
+
+.. _Python.org: https://www.python.org
 
 .. code-block:: console
 
