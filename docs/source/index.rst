@@ -1,13 +1,9 @@
-写给 Linux 开发者的macOS 指南!
+写给 Linux 开发者的 macOS 指南!
 ===================================
 
-**Lumache** (/lu'make/) is a Python library for cooks and food lovers
-that creates recipes mixing random ingredients.
-It pulls data from the `Open Food Facts database <https://world.openfoodfacts.org/>`_
-and offers a *simple* and *intuitive* API.
+本文档介绍了面向*开发者* (特别是有 Linux 使用经验)的 macOS 使用教程。虽然 Linux、FreeBSD 以及 macOS 都是 Unix-like 操作系统，但是无论从底层内核还是上层应用的角度来看，都有较大的不同。因此，本文档重点介绍了macOS 中相比其他类 Unix 操作系统（特别是 Linux）最重要的一些特性，以便让具备 Linux 开发经验的读者快速上手 macOS。
 
-Check out the :doc:`usage` section for further information, including
-how to :ref:`installation` the project.
+
 
 .. note::
 
@@ -20,3 +16,4 @@ Contents
 
    utility
    compilation
+   binary
