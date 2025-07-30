@@ -8,11 +8,11 @@
 动态链接库 (``.dylib``)
 ----------------
 
-``Mach-O`` 文件中的动态链接库可以对应 ELF 文件类型中的 Shared Object (文件扩展名一般为 ``.so``)。 ``Mach-O`` 文件中有两种动态链接库: ``dylib``(``MH_DYLIB``) 和 ``bundle``(``MH_BUNDLE``, 不同于目录结构的 Bundle)。 ``bundle`` 类型的文件扩展名可以为 ``.bundle``（但是容易和目录结构的 Bundle 混淆）或者直接使用 ``.so``。 
+``Mach-O`` 文件中的动态链接库可以对应 ELF 文件类型中的 Shared Object (文件扩展名一般为 ``.so`` )。 ``Mach-O`` 文件中有两种动态链接库: ``dylib``  和 ``bundle`` ( 不同于目录结构的 Bundle)。 ``bundle`` 类型的文件扩展名可以为 ``.bundle``（但是容易和目录结构的 Bundle 混淆）或者直接使用 ``.so`` 。 
 
 ``dylib`` 和 ``bundle`` 的实际差别非常小, 在动态加载时有细微差别。此外, ``dylib`` 一般会被公开使用, 而 ``bundle`` 一般只在一个 app 内部使用。
 
-可以用以下命令构建 ``dylib``:
+可以用以下命令构建 ``dylib`` :
 
 .. code-block:: console
 
@@ -25,14 +25,14 @@
     clang -bundle -undefined dynamic_lookup -o libfoo.so foo.c
 
 
-Bundle (App, Framework 和 Bundle)
+Bundle (App, Framework 和 Plug-in)
 ----------------
 
 Bundle 是 macOS 和 iOS 中打包和分发软件的一种方式（一个 Bundle 实质上就是一个目录）。
 
-主要有 4 种 Bundle:
+主要有 3 种 Bundle:
 
-* App, 一个 macOS 应用程序就是这种类型的 Bundle (``/Applications`` 目录中的那些 ``.app``)。该类型的 Bundle 的典型结构如下:
+* Application, 一个 macOS 应用程序就是这种类型的 Bundle (``/Applications`` 目录中的那些 ``.app``)。该类型的 Bundle 的典型结构如下:
 
 .. code-block:: console
 
@@ -91,3 +91,4 @@ Bundle 是 macOS 和 iOS 中打包和分发软件的一种方式（一个 Bundle
 
 Visual Studio Code 由 Electron 构建。实际可执行文件为 Electron (由 ``Info.plist`` 指定)。很显然，该可执行文件应该链接到 Electron Framework。
             
+* Plug-in, 结构和 Application Bundle 基本一致。 不同之处是 ``MacOS`` 目录下是一个动态链接库。Bundle 目录的扩展名没有限制, 但一般是 ``.bundle`` 或者 ``.plugin`` 。
