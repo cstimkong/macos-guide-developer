@@ -13,7 +13,7 @@ Contents
 --------
 
 .. toctree::
-
+   hierarchy
    utility
    compilation
    binary

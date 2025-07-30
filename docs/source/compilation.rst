@@ -3,7 +3,7 @@
 
 不同于大多数 Linux 发行版，macOS 很早就不再采用 GNU 的编译构建工具, 例如 ``gcc``。默认的编译器是 ``clang``，需要安装 Command Line Tools 或者 XCode （同时集成了 Command Line Tools）才可使用。XCode 可以从 App Store 或者 Apple 开发者网站下载，Command Line Tools 可从开发者网站下载或者通过 ``xcode-select --install`` 命令安装。
 
-Command Line Tools 集成了一系列 Unix-style 的工具, 例如 ``clang``, ``ld``, ``objdump``, ``ar``, ``as``, 等等（还附带较低版本的 Python 和 Ruby 等），具体可见 Developer 目录（一般在 ``/Library/Developer/CommandLineTools/usr/bin``）。注意, ``/usr/bin`` 目录下面仍然有相关的可执行文件，例如 ``/usr/bin/clang``, 但实际上会调用开发者工具目录中的相关命令。
+Command Line Tools 集成了一系列 Unix-style 的工具, 例如 ``clang``, ``ld``, ``objdump``, ``ar``, ``as``, 等等 (还附带较低版本的 Python 和 Ruby 等)，具体可见 Developer 目录（一般在 ``/Library/Developer/CommandLineTools/usr/bin``）。注意, ``/usr/bin`` 目录下面仍然有相关的可执行文件，例如 ``/usr/bin/clang``, 但实际上会调用开发者工具目录中的相关命令。
 
 活动的开发者目录
 -------------
