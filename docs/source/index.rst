@@ -1,4 +1,4 @@
-Welcome to Lumache's documentation!
+写给 Linux 开发者的macOS 指南!
 ===================================
 
 **Lumache** (/lu'make/) is a Python library for cooks and food lovers
