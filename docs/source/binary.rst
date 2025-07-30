@@ -54,4 +54,24 @@ Bundle 是 macOS 和 iOS 中打包和分发软件的一种方式（一个 Bundle
                 ...
                 
 
-可以看到, 一个 Framework 可以包含多个版本 (``Versions`` 的各个子目录都是一个版本), ``Versions/Current`` 是一个符号链接, 指向当前版本, ``Versions/{ver}/Python`` 是实际的动态链接库, 对应 ``libpython3.11.so`` (Linux) 或者 ``libpython3.11.dylib`` (macOS) 如果不选择构建为 Framework。 调用 Python 解释器的程序会链接到这个库。
+可以看到, 一个 Framework 可以包含多个版本 (``Versions`` 的各个子目录都是一个版本), ``Versions/Current`` 是一个符号链接, 指向当前版本, ``Versions/{ver}/Python`` 是实际的动态链接库, 对应 ``libpython3.11.so`` (Linux) 或者 ``libpython3.11.dylib`` (macOS) 如果不选择构建为 Framework。 调用 Python 解释器的程序会链接到这个库。一般来说, 动态链接库的名字 (这里是 ``Python``) 和 Framework 目录名相同（可以由 ``Versions/Current/Resources/Info.plist`` 中的 ``CFBundleExecutable`` 选项指定）。
+
+同时这个 Framework 中还包含了其他内容, 例如 Python 的可执行文件以及一些文档。很明显, Framework 比较适合 Python 的打包分发。
+
+一个 Framework 往往被包含在一些 ``App`` Bundle 中, 作为应用程序本身的依赖。例如 Visual Studio Code 的目录结构:
+
+.. code-block:: console
+    Visual Studio Code.app
+        Contents
+            MacOS
+                Electron
+            Frameworks
+                Electron Framework.framework
+                Mantle.framework
+                Squirrel.framework
+                ...
+            Resources
+            Info.plist
+
+Visual Studio Code 由 Electron 构建。实际可执行文件为 Electron (由 ``Info.plist`` 指定)。很显然，该可执行文件应该链接到 Electron Framework。
+            
