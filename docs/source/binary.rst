@@ -8,9 +8,21 @@
 动态链接库 (``.dylib``)
 ----------------
 
-``Mach-O``文件中的动态链接库可以对应 ELF 文件类型中的 Shared Object (文件扩展名一般为 ``.so``)。 ``Mach-O`` 文件中有两种动态链接库: ``dylib``(``MH_DYLIB``) 和 ``bundle``(``MH_BUNDLE``, 不同于目录结构的 Bundle)。 ``bundle`` 类型的文件扩展名可以为 ``.bundle``（但是容易和目录结构的 Bundle 混淆）。 
+``Mach-O`` 文件中的动态链接库可以对应 ELF 文件类型中的 Shared Object (文件扩展名一般为 ``.so``)。 ``Mach-O`` 文件中有两种动态链接库: ``dylib``(``MH_DYLIB``) 和 ``bundle``(``MH_BUNDLE``, 不同于目录结构的 Bundle)。 ``bundle`` 类型的文件扩展名可以为 ``.bundle``（但是容易和目录结构的 Bundle 混淆）或者直接使用 ``.so``。 
 
 ``dylib`` 和 ``bundle`` 的实际差别非常小, 在动态加载时有细微差别。此外, ``dylib`` 一般会被公开使用, 而 ``bundle`` 一般只在一个 app 内部使用。
+
+可以用以下命令构建 ``dylib``:
+
+.. code-block:: console
+
+    clang -dynamiclib -undefined dynamic_lookup -o libfoo.dylib foo.c
+
+可以用以下命令构建 ``bundle``:
+
+.. code-block:: console
+
+    clang -bundle -undefined dynamic_lookup -o libfoo.so foo.c
 
 
 Bundle (App, Framework 和 Bundle)
