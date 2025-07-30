@@ -1,9 +1,9 @@
-Usage
+用户态工具
 =====
 
 .. _installation:
 
-Installation
+命令 `ls`
 ------------
 
 To use Lumache, first install it using pip:
@@ -12,7 +12,7 @@ To use Lumache, first install it using pip:
 
    (.venv) $ pip install lumache
 
-Creating recipes
+命令 `cp`
 ----------------
 
 To retrieve a list of random ingredients,
