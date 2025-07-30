@@ -8,6 +8,9 @@
 动态链接库 (``.dylib``)
 ----------------
 
+``Mach-O``文件中的动态链接库可以对应 ELF 文件类型中的 Shared Object (文件扩展名一般为 ``.so``)。 ``Mach-O`` 文件中有两种动态链接库: ``dylib``(``MH_DYLIB``) 和 ``bundle``(``MH_BUNDLE``, 不同于目录结构的 Bundle)。 ``bundle`` 类型的文件扩展名可以为 ``.bundle``（但是容易和目录结构的 Bundle 混淆）。 
+
+``dylib`` 和 ``bundle`` 的实际差别非常小, 在动态加载时有细微差别。此外, ``dylib`` 一般会被公开使用, 而 ``bundle`` 一般只在一个 app 内部使用。
 
 
 Bundle (App, Framework 和 Bundle)
@@ -61,6 +64,7 @@ Bundle 是 macOS 和 iOS 中打包和分发软件的一种方式（一个 Bundle
 一个 Framework 往往被包含在一些 ``App`` Bundle 中, 作为应用程序本身的依赖。例如 Visual Studio Code 的目录结构:
 
 .. code-block:: console
+
     Visual Studio Code.app
         Contents
             MacOS
