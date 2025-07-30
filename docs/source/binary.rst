@@ -4,6 +4,7 @@
 ``Mach-O`` 格式
 ---------------
 
+.. _binary_dynamic_lib:
 
 动态链接库 (``.dylib``)
 ----------------
@@ -24,6 +25,8 @@
 
     clang -bundle -undefined dynamic_lookup -o libfoo.so foo.c
 
+
+.. _binary_bundle:
 
 Bundle (App, Framework 和 Plug-in)
 ----------------
