@@ -44,7 +44,7 @@ Bundle 是 macOS 和 iOS 中打包和分发软件的一种方式（一个 Bundle
 
 其中, ``MacOS`` 目录中包含具体的可执行文件 (一般和 ``.app`` 目录同名), ``Info.plist`` 包含该 Bundle 的一些基本信息, ``Resources`` 包含资源文件。
 
-* Framework, 可以视为动态链接库的进一步封装。一个典型的动态链接库的结构如下（以 Python 为例, Python 可以从 ``Python.org``_ 下载, 并安装到 ``/Library/Frameworks/Python.framework``）:
+* Framework, 可以视为动态链接库的进一步封装。一个典型的动态链接库的结构如下 (以 Python 为例, Python 可以从 `Python.org`_ 下载, 并安装到 ``/Library/Frameworks/Python.framework`` ):
 
 .. _Python.org: https://www.python.org
 
@@ -94,3 +94,7 @@ Bundle 是 macOS 和 iOS 中打包和分发软件的一种方式（一个 Bundle
 Visual Studio Code 由 Electron 构建。实际可执行文件为 Electron (由 ``Info.plist`` 指定)。很显然，该可执行文件应该链接到 Electron Framework。
             
 * Plug-in, 结构和 Application Bundle 基本一致。 不同之处是 ``MacOS`` 目录下是一个动态链接库。Bundle 目录的扩展名没有限制, 但一般是 ``.bundle`` 或者 ``.plugin`` 。
+
+更多信息请见苹果开发者网站 `developer.apple.com`_ 。
+
+.. _developer.apple.com: https://developer.apple.com/library/archive/documentation/CoreFoundation/Conceptual/CFBundles/AboutBundles/AboutBundles.html
