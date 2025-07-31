@@ -4,6 +4,8 @@
 ``Mach-O`` 格式
 ---------------
 
+Mach-O 是 macOS 中的 Object 文件格式 (对应 Linux 和 BSD 中的 ELF 文件)。
+
 .. _binary_dynamic_lib:
 
 动态链接库 (``.dylib``)

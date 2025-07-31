@@ -26,7 +26,31 @@ Xcode 的开发者目录一般位于 ``/Applications/Xcode.app/Contents/Develope
 
 * ``SDK`` 目录内是 Command Line Tools 附带的 SDK (默认为 ``MacOSX.sdk`` )。具体的 SDK 目录内仍然还有一个 ``usr`` 目录。该目录的内容是具体的头文件和和可供链接的动态链接库 (注意，较早期版本的 macOS,头文件仍可以在 ``/usr/include`` 中找到, 但是现在的一些通用头文件只能在 SDK 目录中找到)。SDK 目录中的 ``usr`` 目录包含了 ``bin``, ``include``, ``lib`` 等熟知的子目录。 ``usr/include`` 中包含了真正可供引入的头文件，例如 ``stdio.h``, ``stdlib.h``, ``unistd.h``，等等。 ``usr/lib`` 目录中包含了动态链接库 (现在的 SDK 会以 ``.tbd`` 文件的形式提供)。
 
-.. autosummary::
-   :toctree: generated
+macOS SDK 中提供的库
+----------------
 
-   lumache
+最近版本的 macOS 15 SDK 提供了以下的自带库:
+
+* ``libz``, 用于压缩的函数库。
+
+* ``libxslt``, XSLT 的实现。
+
+* ``libxml2``, 解析 XML 文档的函数库。
+
+* ``liby``, yacc (bison) 链接库。
+
+* ``libxar``, 解析 XAR 文档的函数库。
+
+* ``libtcl``, Tcl 链接库 (仅为兼容性保留)。
+
+* ``libtk``, Tk 链接库 (仅为兼容性保留)。
+
+* ``libSystem``, 底层 C 函数库, 类似 ``glibc`` 中的 ``libc.so`` 。
+
+* ``libc++``, Libc++ 函数库 (Linux 常用 ``libstdc++`` )。
+
+* ``libldap``, LDAP 有关的函数库 (Linux 常用 ``openldap`` )。
+
+* ``libsqlite3``, 用于访问 SQLite 3 数据库的函数库。
+
+* ``libedit``, BSD Line Editting Library, 命令行编辑工具 (Linux 常用 ``libreadline`` )。
