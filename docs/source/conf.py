@@ -2,9 +2,9 @@
 
 # -- Project information
 
-project = 'Lumache'
-copyright = '2021, Graziella'
-author = 'Graziella'
+project = '面向开发者的 macOS 指南'
+copyright = '2021, Dezhen Kong'
+author = 'Dezhen Kong'
 
 release = '0.1'
 version = '0.1.0'
