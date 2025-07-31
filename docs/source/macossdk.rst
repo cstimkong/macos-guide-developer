@@ -46,7 +46,7 @@ macOS SDK 中提供的库
 
 * ``libxml2``, 解析 XML 文档的函数库。
 
-* ``liby``, yacc (bison) 链接库。
+* ``liby``, `GNU Bison`_ (yacc) 链接库。
 
 * ``libxar``, 解析 XAR 文档的函数库。
 
@@ -57,6 +57,8 @@ macOS SDK 中提供的库
 * ``libSystem``, 底层 C 函数库, 可以对应 ``libc.so`` 以及 ``libm.so``, ``libpthread.so``, ``libdl.so`` 等 glibc 中的动态链接库。
 
 * ``libc++``, Libc++ 函数库 (Linux 常用 ``libstdc++`` )。
+
+* Ncurses 函数库, 包括 ``libncurses``, ``libform``, ``libpanel``, ``libmenu``, 对应 Linux 中的 ``ncurses`` 和 ``ncursesw`` 。
 
 * ``libldap`` 和 ``liblber``, LDAP 协议有关的函数库 (Linux 常用 ``openldap`` )。
 
@@ -76,6 +78,14 @@ macOS SDK 中提供的库
 
 * ``libpcap``, 网络数据包捕获函数库。
 
+* ``libkrb4``, ``libkrb5``, `Kerberos 协议`_ 的函数库。
+
 .. _BSD Line Editting Library: https://thrysoee.dk/editline/
 
 .. _libreadline: https://tiswww.case.edu/php/chet/readline/
+
+.. _Kerberos 协议: https://web.mit.edu/kerberos/
+
+.. _GNU Bison: https://www.gnu.org/software/bison/
+
+以上的库在主流 Linux 发行版中均有对应的选项, 可以通过 apt 或者 yum 等包管理器安装。
