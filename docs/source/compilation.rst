@@ -48,16 +48,16 @@ Command Line Tools 中提供了大量的实用工具, 主要包括:
 
 * Apple 提供的二进制工具, 包括 ``strings``, ``size``, ``nm``, ``ld``, ``ar``, ``as``等。
 
-* ``m4``, GNU M4 宏处理器。
+* ``m4``, `GNU M4`_ 宏处理器。
+
+.. _GNU M4: https://www.gnu.org/software/m4/
 
 * ``make``, `GNU Make`_ (版本较老)。
-
 .. _GNU Make: https://www.gnu.org/software/make/
 
 * ``codesign``, Mach-O 文件代码签名工具。
 
 * ``notarytool``, macOS App 公证工具 (见 `开发者网站`_ )。
-
 .. _开发者网站: https://developer.apple.com/documentation/security/notarizing-macos-software-before-distribution
 
 * ``stapler``, 获取公证 Tickets 的工具。
