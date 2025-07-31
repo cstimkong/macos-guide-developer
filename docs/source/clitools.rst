@@ -17,12 +17,44 @@ Xcode app 也集成了一套 Command Line Tools, 一般位于 ``/Applications/Xc
 可以使用 ``xcode-select --switch <developer directory>`` 命令切换开发者目录。 ``xcode-select --print-path`` 命令会输出当前活动的开发者目录。
 
 
+
 开发者目录的结构
 ---------
 
-以 ``/Library/Developer/CommandLineTools`` 为例,
+独立安装的 Command Line Tools (位于 ``/Library/Developer/CommandLineTools``) 一般有如下结构:
 
-* ``Library`` 目录内是和 Command Line Tools 有关的 Frameworks 和其他文件。
+.. code-block:: console
+
+    Library
+    SDKs
+    usr
+        bin
+            clang
+            clang++
+            lldb
+            objdump
+            git
+            swiftc
+            ...
+        include
+        lib
+            clang
+            libclang.dylib
+            libLTO.dylib
+            libxcrun.dylib
+            ...
+        libexec
+            git-core
+                git-init
+                git-clone
+                git-log
+                ...
+            swift
+        share
+
+其中:
+
+* ``SDKs`` 目录包含该 Command Line Tools 所附带的 SDK (见 :ref:`macossdk`)。
 
 * ``usr`` 目录下包含 ``bin``, ``include``, ``libexec``, ``lib`` 和 ``share``。熟悉 Linux 的用户应该对这些目录非常熟悉。例如, ``usr/bin`` 目录内包含了各种编译构建工具, 如 ``clang``, ``clang++``, ``ld``, 等等。
 
@@ -46,13 +78,13 @@ Command Line Tools 中提供了大量的实用工具, 主要包括:
 
 * Python 可执行文件: 可执行文件 ``python3``, ``pydoc3``, ``pip3``, ``2to3`` 等 (较老的版本)。
 
-* LLVM 二进制工具, 包括 ``otool``, ``objdump``, ``llvm-cov`` 等。
+* LLVM 二进制工具: ``llvm-otool``, ``llvm-objdump``, ``llvm-cov``, ``llvm-cxxfilt``, ``llvm-nm`` 等。
 
 * Apple 提供的二进制工具, 包括 ``strings``, ``size``, ``nm``, ``ld``, ``ar``, ``as`` 等。
 
-* ``m4``, `GNU M4`_ 宏处理器 (版本较老)。
+* `GNU M4`_ 宏处理器: 可执行文件 ``m4``, ``gm4`` (版本较老)。
 
-* ``make``, `GNU Make`_ (版本较老)。
+* `GNU Make`_ : 可执行文件 ``make``, ``gnumake`` (版本较老)。
 
 * ``codesign``, Mach-O 文件代码签名工具。
 
