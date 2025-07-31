@@ -5,6 +5,7 @@
 
 Command Line Tools 集成了一系列 Unix-style 的工具, 例如 ``clang``, ``ld``, ``objdump``, ``ar``, ``as``, 等等 (还附带较低版本的 Python 和 Ruby 等)，具体可见 Developer 目录（一般在 ``/Library/Developer/CommandLineTools/usr/bin``）。注意, ``/usr/bin`` 目录下面仍然有相关的可执行文件，例如 ``/usr/bin/clang``, 但实际上会调用开发者工具目录中的相关命令。
 
+
 活动的开发者目录
 -------------
 
@@ -45,12 +46,26 @@ macOS SDK 中提供的库
 
 * ``libtk``, Tk 链接库 (仅为兼容性保留)。
 
-* ``libSystem``, 底层 C 函数库, 类似 ``glibc`` 中的 ``libc.so`` 。
+* ``libSystem``, 底层 C 函数库, 类似 ``glibc`` 中的 ``libc.so`` 。包含了 ``libm``, ``libpthread``, ``libc``, ``libdl`` 等基础库的实现。
 
 * ``libc++``, Libc++ 函数库 (Linux 常用 ``libstdc++`` )。
 
-* ``libldap``, LDAP 有关的函数库 (Linux 常用 ``openldap`` )。
+* ``libldap`` 和 ``liblber``, LDAP 协议有关的函数库 (Linux 常用 ``openldap`` )。
 
 * ``libsqlite3``, 用于访问 SQLite 3 数据库的函数库。
 
 * ``libedit``, BSD Line Editting Library, 命令行编辑工具 (Linux 常用 ``libreadline`` )。
+
+* ``libiconv``, 字符编码转换库。注意, Linux 下 glibc 包含了 ``libiconv`` 的实现, 因此不需要手动链接 ``libiconv`` 。macOS ``libiconv`` 库中的导出符号和 GNU libiconv 的也有区别, 例如: macOS ``libiconv`` 中的 ``iconv_open`` 对应 GNU libiconv 中的 ``libiconv_open`` 。为保证兼容, 头文件中进行了对应的宏定义处理。
+
+
+* ``libexpat``, 面向流的 XML 解析库。
+
+* ``libresolv``, DNS (Domain Name Service) 信息处理库, 对应 glibc 中的 ``libresolv.so`` 。
+
+* ``libcurl``, CURL 库 (用于URL 传输)。
+
+* ``libffi``, 外部函数接口 (Foreign Function Interface) 库。
+
+* ``libpcap``, 网络数据包捕获函数库。
+
