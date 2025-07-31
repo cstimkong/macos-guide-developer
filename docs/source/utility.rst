@@ -1,7 +1,9 @@
-用户态工具
+常用工具
 ===========
 
-.. _installation:
+本章节介绍 macOS 中常用的一些工具 (Utilities) , 在 ``/bin`` 目录中。 大部分工具都是 FreeBSD-style 的, 和 Linux 中对应工具的用法有所不同。
+
+.. _lscommand:
 
 命令 `ls`
 ------------
@@ -11,6 +13,8 @@ To use Lumache, first install it using pip:
 .. code-block:: console
 
    (.venv) $ pip install lumache
+
+.. _xattrcommand:
 
 命令 `xattr`
 ----------------
@@ -34,6 +38,8 @@ macOS 支持文件的扩展属性 (一系列 Key-value 对), 对应 Linux 中的
 
 可以通过 man 命令查看其参考文档。
 
+.. _cpcommand:
+
 命令 `cp`
 ------------
 
@@ -43,6 +49,15 @@ macOS 中自带的 ``cp`` 命令基本和 FreeBSD 中的 ``cp`` 相同。 用法
 
 * 对于 macOS 的 ``cp`` 命令, 使用递归模式复制时 ( ``-R`` 选项), 如果被复制的目录以 ``/`` 结尾, 则复制目录中的内容而不是目录本身。
 
+
+.. _lncommand:
+
 命令 `ln`
 -----------
+
+和 Linux 中的 ``ln`` 基本相同, 但是要注意以下不同点:
+
+* macOS ``ln`` 命令的 ``-L`` 选项表示在建立对一个符号链接 (Symbolic Link) 的硬链接 (Hard Link) 时, 硬链接的目标是该符号链接实际指向的路径而不是符号链接本身。 Linux ``ln`` 命令的 ``-L`` 选项并没有限制在硬链接。
+
+* macOS ``ln`` 命令没有 ``-r`` 和 ``-P`` 和 ``-S`` 选项。
 
