@@ -32,19 +32,19 @@ Command Line Tools 中提供的工具
 
 Command Line Tools 中提供了大量的实用工具, 主要包括:
 
-* ``git``, Git 源代码管理工具。
+* Git 源代码管理工具: 可执行文件 ``git``, ``git-receive-pack``, ``git-shell``, ``git-upload-archive``, ``git-upload-pack``, ``scalar``。
 
-* ``clang`` 和 ``clang++``, C 和 C++ 编译器。
+* Clang: C 和 C++ 编译器, 可执行文件 ``clang``, ``clang++``, ``clang-cache``, ``clang-cas-test``, ``clang-format`` 等。
 
-* ``swiftc``, Swift 编译器。
+* Swift 编译器: 可执行文件 ``swiftc``, ``swift-build``, ``swift-cache-tool``, ``swift-format`` 等。
 
-* ``lldb``, LLDB 调试器。
+* LLDB 调试器: 可执行文件 ``lldb``, ``lldb-dap`` 。
 
-* ``libtool`` 和 ``ranlib``, Libtool 链接库处理工具。
+* Libtool 链接库处理工具: 可执行文件 ``libtool`` 和 ``ranlib`` 。 
 
-* ``yacc`` ( ``bison`` ), GNU Parser 生成器。
+* GNU Bison: 可执行文件 ``yacc`` 和 ``bison`` 。
 
-* Python 可执行文件, 包括 ``python3``, ``pydoc3``, ``pip3``, ``2to3`` 等 (Python  较老的版本)。
+* Python 可执行文件: 可执行文件 ``python3``, ``pydoc3``, ``pip3``, ``2to3`` 等 (较老的版本)。
 
 * LLVM 二进制工具, 包括 ``otool``, ``objdump``, ``llvm-cov`` 等。
 
