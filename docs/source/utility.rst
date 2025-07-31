@@ -12,23 +12,9 @@ To use Lumache, first install it using pip:
 
    (.venv) $ pip install lumache
 
-命令 `cp`
+命令 `xattr`
 ----------------
 
-To retrieve a list of random ingredients,
-you can use the ``lumache.get_random_ingredients()`` function:
+macOS 支持文件的扩展属性 (一系列 Key-value 对), 对应 Linux 中的 `attr`_ 系列工具 ( ``attr``, ``getfattr``, ``setfattr`` ) 所提供的功能。
 
-.. autofunction:: lumache.get_random_ingredients
-
-The ``kind`` parameter should be either ``"meat"``, ``"fish"``,
-or ``"veggies"``. Otherwise, :py:func:`lumache.get_random_ingredients`
-will raise an exception.
-
-.. autoexception:: lumache.InvalidKindError
-
-For example:
-
->>> import lumache
->>> lumache.get_random_ingredients()
-['shells', 'gorgonzola', 'parsley']
-
+.. _attr: https://savannah.nongnu.org/projects/attr
