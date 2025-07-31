@@ -15,7 +15,7 @@ Contents
 .. toctree::
    hierarchy
    utility
-   compilation
+   clitools
    macossdk
    binary
    java
