@@ -25,7 +25,6 @@ Xcode 的开发者目录一般位于 ``/Applications/Xcode.app/Contents/Develope
 
 * ``usr`` 目录下包含 ``bin``, ``include``, ``libexec``, ``lib`` 和 ``share``。熟悉 Linux 的用户应该对这些目录非常熟悉。例如, ``usr/bin`` 目录内包含了各种编译构建工具, 如 ``clang``, ``clang++``, ``ld``, 等等。
 
-* ``SDK`` 目录内是 Command Line Tools 附带的 SDK (默认为 ``MacOSX.sdk`` )。具体的 SDK 目录内仍然还有一个 ``usr`` 目录。该目录的内容是具体的头文件和和可供链接的动态链接库 (注意，较早期版本的 macOS,头文件仍可以在 ``/usr/include`` 中找到, 但是现在的一些通用头文件只能在 SDK 目录中找到)。SDK 目录中的 ``usr`` 目录包含了 ``bin``, ``include``, ``lib`` 等熟知的子目录。 ``usr/include`` 中包含了真正可供引入的头文件，例如 ``stdio.h``, ``stdlib.h``, ``unistd.h``，等等。 ``usr/lib`` 目录中包含了动态链接库 (现在的 SDK 会以 ``.tbd`` 文件的形式提供)。
 
 Command Line Tools 中提供的工具
 ----------------
@@ -44,11 +43,11 @@ Command Line Tools 中提供了大量的实用工具, 主要包括:
 
 * ``yacc`` ( ``bison`` ), GNU Parser 生成器。
 
-* ``python``, Python 3 较老的版本。
+* Python 可执行文件, 包括 ``python3``, ``pydoc3``, ``pip3``, ``2to3`` 等 (Python  较老的版本)。
 
 * LLVM 二进制工具, 包括 ``otool``, ``objdump``, ``llvm-cov`` 等。
 
-* Apple 提供的二进制工具, 包括 ``strings``, ``size``, ``nm``, ``ld``, ``ar``, ``as``等。
+* Apple 提供的二进制工具, 包括 ``strings``, ``size``, ``nm``, ``ld``, ``ar``, ``as`` 等。
 
 * ``m4``, `GNU M4`_ 宏处理器 (版本较老)。
 
@@ -68,47 +67,4 @@ Command Line Tools 中提供了大量的实用工具, 主要包括:
 .. _GNU M4: https://www.gnu.org/software/m4/
 
 .. _开发者网站: https://developer.apple.com/documentation/security/notarizing-macos-software-before-distribution
-
-
-macOS SDK 中提供的库
-----------------
-
-最近版本的 macOS 15 SDK 提供了以下的自带库:
-
-* ``libz``, 用于压缩的函数库。
-
-* ``libxslt``, XSLT 的实现。
-
-* ``libxml2``, 解析 XML 文档的函数库。
-
-* ``liby``, yacc (bison) 链接库。
-
-* ``libxar``, 解析 XAR 文档的函数库。
-
-* ``libtcl``, Tcl 链接库 (仅为兼容性保留)。
-
-* ``libtk``, Tk 链接库 (仅为兼容性保留)。
-
-* ``libSystem``, 底层 C 函数库, 类似 ``glibc`` 中的 ``libc.so`` 。包含了 ``libm``, ``libpthread``, ``libc``, ``libdl`` 等基础库的实现。
-
-* ``libc++``, Libc++ 函数库 (Linux 常用 ``libstdc++`` )。
-
-* ``libldap`` 和 ``liblber``, LDAP 协议有关的函数库 (Linux 常用 ``openldap`` )。
-
-* ``libsqlite3``, 用于访问 SQLite 3 数据库的函数库。
-
-* ``libedit``, BSD Line Editting Library, 命令行编辑工具 (Linux 常用 ``libreadline`` )。
-
-* ``libiconv``, 字符编码转换库。注意, Linux 下 glibc 包含了 ``libiconv`` 的实现, 因此不需要手动链接 ``libiconv`` 。macOS ``libiconv`` 库中的导出符号和 GNU libiconv 的也有区别, 例如: macOS ``libiconv`` 中的 ``iconv_open`` 对应 GNU libiconv 中的 ``libiconv_open`` 。为保证兼容, 头文件中进行了对应的宏定义处理。
-
-
-* ``libexpat``, 面向流的 XML 解析库。
-
-* ``libresolv``, DNS (Domain Name Service) 信息处理库, 对应 glibc 中的 ``libresolv.so`` 。
-
-* ``libcurl``, CURL 库 (用于URL 传输)。
-
-* ``libffi``, 外部函数接口 (Foreign Function Interface) 库。
-
-* ``libpcap``, 网络数据包捕获函数库。
 

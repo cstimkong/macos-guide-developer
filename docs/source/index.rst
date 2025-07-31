@@ -16,5 +16,6 @@ Contents
    hierarchy
    utility
    compilation
+   macossdk
    binary
    java

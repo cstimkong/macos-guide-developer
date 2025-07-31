@@ -8,7 +8,7 @@ Mach-O 是 macOS 中的 Object 文件格式 (对应 Linux 和 BSD 中的 ELF 文
 
 .. _binary_dynamic_lib:
 
-动态链接库 (``.dylib``)
+动态链接库 (DYLIB 和 BUNDLE)
 ----------------
 
 ``Mach-O`` 文件中的动态链接库可以对应 ELF 文件类型中的 Shared Object (文件扩展名一般为 ``.so`` )。 ``Mach-O`` 文件中有两种动态链接库: ``dylib``  和 ``bundle`` ( 不同于目录结构的 Bundle)。 ``bundle`` 类型的文件扩展名可以为 ``.bundle`` (但是容易和目录结构的 Bundle 混淆) 或者直接使用 ``.so`` 。 
