@@ -27,6 +27,41 @@ Xcode 的开发者目录一般位于 ``/Applications/Xcode.app/Contents/Develope
 
 * ``SDK`` 目录内是 Command Line Tools 附带的 SDK (默认为 ``MacOSX.sdk`` )。具体的 SDK 目录内仍然还有一个 ``usr`` 目录。该目录的内容是具体的头文件和和可供链接的动态链接库 (注意，较早期版本的 macOS,头文件仍可以在 ``/usr/include`` 中找到, 但是现在的一些通用头文件只能在 SDK 目录中找到)。SDK 目录中的 ``usr`` 目录包含了 ``bin``, ``include``, ``lib`` 等熟知的子目录。 ``usr/include`` 中包含了真正可供引入的头文件，例如 ``stdio.h``, ``stdlib.h``, ``unistd.h``，等等。 ``usr/lib`` 目录中包含了动态链接库 (现在的 SDK 会以 ``.tbd`` 文件的形式提供)。
 
+Command Line Tools 中提供的工具
+----------------
+
+Command Line Tools 中提供了大量的实用工具, 主要包括:
+
+* ``git``, Git 源代码管理工具。
+
+* ``clang`` 和 ``clang++``, C 和 C++ 编译器。
+
+* ``lldb``, LLDB 调试器。
+
+* ``libtool`` 和 ``ranlib``, Libtool 链接库处理工具。
+
+* ``yacc`` ( ``bison`` ), GNU Parser 生成器。
+
+* ``python``, Python 3 较老的版本。
+
+* LLVM 二进制工具, 包括 ``otool``, ``objdump``, ``llvm-cov`` 等。
+
+* Apple 提供的二进制工具, 包括 ``strings``, ``size``, ``nm``, ``ld``, ``ar``, ``as``等。
+
+* ``m4``, GNU M4 宏处理器。
+
+* ``make``, `GNU Make`_ (版本较老)。
+
+.. _GNU Make: https://www.gnu.org/software/make/
+
+* ``codesign``, Mach-O 文件代码签名工具。
+
+* ``notarytool``, macOS App 公证工具 (见 `开发者网站`_ )。
+
+.. _开发者网站: https://developer.apple.com/documentation/security/notarizing-macos-software-before-distribution
+
+* ``stapler``, 获取公证 Tickets 的工具。
+
 macOS SDK 中提供的库
 ----------------
 
