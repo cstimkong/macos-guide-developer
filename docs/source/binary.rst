@@ -4,7 +4,7 @@
 ``Mach-O`` 格式
 ---------------
 
-Mach-O 是 macOS 中的 Object 文件格式 (对应 Linux 和 BSD 中的 ELF 文件)。
+Mach-O 是 macOS 中的 Object 文件格式 (对应 Linux 和 BSD 中的 ELF 文件, Windows 中的 PE 文件)。
 
 .. _binary_dynamic_lib:
 
