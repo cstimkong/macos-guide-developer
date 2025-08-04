@@ -21,11 +21,11 @@
 
 * LLVM
 
-* ncurses, libxml2, libreadline 等常见库的使用
+* ``ncurses``, ``libxml2``, ``libreadline``, ``libssl`` 等常见库的使用
 
 * x86 或 ARM 汇编
 
-* 系统级编程语言 (如 Rust 和 Go)
+* 除了 C/C++ 之外的系统级编程语言 (如 Rust 和 Go)
 
 这些知识并不是必需的, 但对于深刻理解本文档的内容会有帮助。
 

@@ -9,19 +9,26 @@ macOS 的目录结构和一般的 Unix-like 系统类似, 但是有很多特有�
 
 * ``/Applications`` 目录: 包含安装的应用程序 ( ``.app`` Bundle)。 macOS 自带的 apps 在 ``/System/Applications`` 目录中。
 
-* ``/usr/lib`` 目录: 现在的 macOS 已经将大部分动态链接库放置在 dyld cache 中, ``/usr/lib`` 目录中不可见。
+* ``/usr`` 目录: 包含 Unix-style 的工具和库。 除 ``/usr/local`` 之外的大部分目录不可写。
 
-* ``/usr/bin`` 目录: 包含自带的工具类可执行文件。
+  * ``/usr/lib`` 目录: 现在的 macOS 已经将大部分动态链接库放置在 dyld cache 中, ``/usr/lib`` 目录中不可见。
 
-* ``/usr/libexec`` 目录: 包含不是直接由用户执行的可执行文件。
+  * ``/usr/bin`` 目录: 包含自带的各种可执行文件 (一小部分常用的命令工具在 ``/bin`` 目录)。
 
-* ``/usr/local`` 目录: 用户可以自由写入, 作用和其他类 Unix 操作系统中的对应目录一致。
+  * ``/usr/libexec`` 目录: 包含不是直接由用户执行的可执行文件。
 
-* ``/bin`` 目录: 包含日常经常使用的可执行文件。
+  * ``/usr/local`` 目录: 用户可以自由写入, 作用和其他类 Unix 操作系统中的对应目录一致。
+
+* ``/bin`` 目录: 包含日常经常使用的可执行文件。目前该目录中只有 ``chmod``, ``cp``, ``df``, ``echo``, ``ed``, ``date``, ``hostname``, ``cat``, ``expr``, ``ls``, ``ln``, ``pwd``, ``realpath``, ``rm``, ``rmdir``, ``sleep``, ``unlink``, ``stty`` 以及各种 Shell (``bash``, ``tcsh``, ``zsh``, ``csh``, ``ksh``, ``dash``) 等常见的可执行文件。
 
 * ``/Users`` 目录: 包含用户主目录的根目录。
 
 * ``/Library`` 目录: 包含各种应用程序的资源文件 (System Level)。
+
+  * ``/Library/Frameworks`` 目录: 包含由用户安装的第三方 frameworks。例如, 从 Python.org 中下载的 ``.pkg`` 安装包会将 Python 安装在 ``/Library/Frameworks/Python.framework`` 。
+
+  * ``/Library/PreferencePanes`` 目录: 包含用户安装的 System Settings 模块 (类似 Windows 中的控制面板项)。
+
 
 * ``/System`` 目录: 包含 macOS 系统的核心资源文件。
 
@@ -52,7 +59,9 @@ macOS 的目录结构和一般的 Unix-like 系统类似, 但是有很多特有�
 
 * ``/Applications``, 包含用户自己安装的应用程序 (注意, Launch pad 中显示的应用程序还有来自 ``/System/Applications`` 的, 如 ``Safari.app`` 等 Apple 自己开发的 apps)。
 
-除了 ``/opt``, ``/usr/local``, 其他目录仍然受限于 System Integrity Protection (SIP) 的保护, 部分文件无法被修改和删除。
+除了 ``/opt``, ``/usr/local``, 其他目录仍然受限于 macOS 各种安全机制的保护, 部分文件无法被修改和删除 (例如, ``~/Library/Application Support`` 目录中的某些子目录和文件是无法被移动和删除的, 特别是和系统 App 有关的, 包含 ``com.apple`` 的目录项)。
+
+注意: 现在已经没有 ``/usr/include`` 目录, 该目录中的头文件现在只能从 macOS SDK 目录中访问。
 
 macOS Volume 分析
 ---------------------
