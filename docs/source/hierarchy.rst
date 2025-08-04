@@ -7,7 +7,7 @@ macOS 的目录结构和一般的 Unix-like 系统类似, 但是有很多特有�
 ----------------
 
 
-* ``/Applications`` 目录: 包含安装的应用程序 ( ``.app`` Bundle)。
+* ``/Applications`` 目录: 包含安装的应用程序 ( ``.app`` Bundle)。 macOS 自带的 apps 在 ``/System/Applications`` 目录中。
 
 * ``/usr/lib`` 目录: 现在的 macOS 已经将大部分动态链接库放置在 dyld cache 中, ``/usr/lib`` 目录中不可见。
 
@@ -21,7 +21,15 @@ macOS 的目录结构和一般的 Unix-like 系统类似, 但是有很多特有�
 
 * ``/Users`` 目录: 包含用户主目录的根目录。
 
-* ``/Library`` 目录: 包含各种应用程序的资源文件。
+* ``/Library`` 目录: 包含各种应用程序的资源文件 (System Level)。
+
+* ``/System`` 目录: 包含 macOS 系统的核心资源文件。
+
+  * ``/System/Applications``: 包含 Apple 自带的 apps。
+
+  * ``/System/Library``: 包含 Apple 自带的 apps 有关的核心资源文件。
+
+  * ``/System/Volumes``: 包含 APFS 文件系统中特殊 Volumes 的挂载点。
 
 可写的目录
 ----------------------
@@ -42,3 +50,6 @@ macOS 的目录结构和一般的 Unix-like 系统类似, 但是有很多特有�
 * ``/var`` (实际指向 ``/private/var``), 相当于 Linux 中的 ``/var`` 目录。
 
 * ``/Applications``, 包含用户自己安装的应用程序 (注意, Launch pad 中显示的应用程序还有来自 ``/System/Applications`` 的, 如 ``Safari.app`` 等 Apple 自己开发的 apps)。
+
+除了 ``/opt``, ``/usr/local``, 其他目录仍然受限于 System Integrity Protection (SIP) 的保护, 部分文件无法被修改和删除。
+

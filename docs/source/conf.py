@@ -3,7 +3,7 @@
 # -- Project information
 
 project = '面向开发者的 macOS 指南'
-copyright = '2021, Dezhen Kong'
+copyright = '2025, Dezhen Kong'
 author = 'Dezhen Kong'
 
 release = '0.1'
