@@ -11,13 +11,13 @@ macOS 的目录结构和一般的 Unix-like 系统类似, 但是有很多特有�
 
 * ``/usr`` 目录: 包含 Unix-style 的工具和库。 除 ``/usr/local`` 之外的大部分目录不可写。
 
-  * ``/usr/lib`` 目录: 现在的 macOS 已经将大部分动态链接库放置在 dyld cache 中, ``/usr/lib`` 目录中不可见。
+  * ``/usr/lib``: 现在的 macOS 已经将大部分动态链接库放置在 dyld cache 中, ``/usr/lib`` 目录中不可见。
 
-  * ``/usr/bin`` 目录: 包含自带的各种可执行文件 (一小部分常用的命令工具在 ``/bin`` 目录)。
+  * ``/usr/bin``: 包含自带的各种可执行文件 (一小部分常用的命令工具在 ``/bin`` 目录)。
 
-  * ``/usr/libexec`` 目录: 包含不是直接由用户执行的可执行文件。
+  * ``/usr/libexec``: 包含不是直接由用户执行的可执行文件。
 
-  * ``/usr/local`` 目录: 用户可以自由写入, 作用和其他类 Unix 操作系统中的对应目录一致。
+  * ``/usr/local``: 用户可以自由写入, 作用和其他类 Unix 操作系统中的对应目录一致。
 
 * ``/bin`` 目录: 包含日常经常使用的可执行文件。目前该目录中只有 ``chmod``, ``cp``, ``df``, ``echo``, ``ed``, ``date``, ``hostname``, ``cat``, ``expr``, ``ls``, ``ln``, ``pwd``, ``realpath``, ``rm``, ``rmdir``, ``sleep``, ``unlink``, ``stty`` 以及各种 Shell (``bash``, ``tcsh``, ``zsh``, ``csh``, ``ksh``, ``dash``) 等常见的可执行文件。
 
@@ -25,9 +25,15 @@ macOS 的目录结构和一般的 Unix-like 系统类似, 但是有很多特有�
 
 * ``/Library`` 目录: 包含各种应用程序的资源文件 (System Level)。
 
-  * ``/Library/Frameworks`` 目录: 包含由用户安装的第三方 frameworks。例如, 从 Python.org 中下载的 ``.pkg`` 安装包会将 Python 安装在 ``/Library/Frameworks/Python.framework`` 。
+  * ``/Library/Frameworks``: 包含由用户安装的第三方 frameworks。例如, 从 Python.org 中下载的 ``.pkg`` 安装包会将 Python 安装在 ``/Library/Frameworks/Python.framework`` 。
 
-  * ``/Library/PreferencePanes`` 目录: 包含用户安装的 System Settings 模块 (类似 Windows 中的控制面板项)。
+  * ``/Library/Preferences``: 包含 apps 和系统服务的偏好设置文件。
+
+  * ``/Library/Application Support`` 目录: 包含 apps 和系统服务的各种数据和资源。
+
+  * ``/Library/PreferencePanes`` : 包含用户安装的 System Settings 模块 (类似 Windows 中的控制面板项)。
+
+  * ``/Library/LaunchAgents`` 和 ``/Library/LaunchDaemons``: 包含 System-level 的启动项。
 
 
 * ``/System`` 目录: 包含 macOS 系统的核心资源文件。
