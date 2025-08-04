@@ -1,7 +1,42 @@
 常用工具
 ===========
 
-本章节介绍 macOS 中常用的一些工具 (Utilities) , 在 ``/bin`` 目录中。 大部分工具都是 FreeBSD-style 的, 和 Linux 中对应工具的用法有所不同。
+本章节介绍 macOS ``/bin`` 和 ``/usr/bin`` 中一些常用的工具 (Utilities) 。大部分工具都是 FreeBSD-style 的, 和 Linux 中对应工具的用法有所不同。
+
+macOS 中包含的 Utilities 可大致分为以下类别:
+
+* 传统 Unix 操作系统的核心工具 (BSD-style): ``ls``, ``cp``, ``ln``, ``mv``, ``rm``, ``cat``, ``touch`` 等。 大部分工具在 coreutils 中也提供。
+
+* BSD-style 系统管理工具: ``id``, ``groups``, ``chmod``, ``chgrp`` 等。
+
+* BSD-style 通用文本处理工具: ``awk``, ``sed``, ``grep``, ``vim``, ``pico`` 等。
+
+* findutils 工具: ``find``, ``locate``, ``locatedb``, ``xargs`` 。
+
+* Bind DNS 工具: ``nslookup``, ``nsupdate``, ``dig``, ``delv`` 等。
+
+* Less 工具: ``less``, ``more``, ``lesskey``, ``lessecho`` 等。
+
+* 开发者工具: ``clang``, ``objdump``, ``ar``, ``make``, ``git``, ``python`` 等, 会调用 Developer Command Line Tools 中对应的工具 (见 :ref:`developer_tools`)。
+
+* Java 相关工具: ``java``, ``javac``, ``javap``, ``jar`` 等, 会调用 JDK 中的对应工具 (见 :ref:`java_tools`)。
+
+* Perl 相关工具: ``perl``, ``perldoc``, ``pod2man``, ``pod2text`` 等。
+
+* Ruby 相关工具: ``ruby``, ``irb``, ``gem``, ``rake`` 等。
+
+* ncurses 工具: ``clear``, ``tput``, ``toe``, ``infocmp`` 等。
+
+* openldap 工具: ``ldapadd``, ``ladpmodify``, ``ldappasswd`` 等。
+
+* zip 工具 (版本较低): ``zip``, ``unzip``, ``zipinfo`` 等 (不是 libzip)。
+
+* Tcl/tk 工具 (已被废弃, 仅为兼容性保留): ``tclsh``, ``wish`` 。
+
+* Xcode 工具: ``xcode-select``, ``xcrun`` 等。
+
+* macOS 特有的工具: ``xattr``, ``plutil``, ``defaults``, ``pkgbuild``, ``hidutil``, ``pmset`` 等。
+
 
 .. _lscommand:
 

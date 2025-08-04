@@ -1,5 +1,7 @@
-命令行工具
-===========
+.. _developer_tools:
+
+开发者命令行工具
+=============
 
 
 Apple 提供了一套 Command Line Tools, 集成了一系列 Unix-style 的工具, 例如 ``clang``, ``clang++``, ``cpp``, ``objdump``, ``ar``, 等等, 还附带较低版本的 Python 和 Ruby。Command Line Tools 被安装在开发者目录 (Developer Directory, 一般在 ``/Library/Developer/CommandLineTools``)。 Command Line Tools 可从开发者网站下载, 或者通过 ``xcode-select --install`` 命令安装。
