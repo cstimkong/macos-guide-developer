@@ -31,6 +31,7 @@ macOS 的目录结构和一般的 Unix-like 系统类似, 但是有很多特有�
 
   * ``/System/Volumes``: 包含 APFS 文件系统中特殊 Volumes 的挂载点。
 
+
 可写的目录
 ----------------------
 
@@ -53,3 +54,15 @@ macOS 的目录结构和一般的 Unix-like 系统类似, 但是有很多特有�
 
 除了 ``/opt``, ``/usr/local``, 其他目录仍然受限于 System Integrity Protection (SIP) 的保护, 部分文件无法被修改和删除。
 
+macOS Volume 分析
+---------------------
+
+从 macOS Volume 角度分析, 一个 macOS 实例安装在一个 APFS Container 中, 这个 Container 至少包含了以下 Volumes:
+
+* ``Macintosh HD`` 卷: 这是包含 macOS 系统核心文件的 Volume。 该 Volume 的一个 snapshot 会被挂载为根目录 ``/`` , 因此根目录实际上是只读的。
+
+* ``Data`` 卷: 这是 包含 macOS 可修改数据的 Volume。 该 Volume 会被挂载到 ``/System/Volumes/Data`` 。该 Volume 和 ``Macintosh HD`` 卷形成一个 Volume Group。 该卷中的部分目录会形成在 ``Macintosh HD`` 卷中的 firmlink, 例如 ``/usr/local`` ( ``/usr/local`` 和 ``/System/Volumes/Data/usr/local`` 的 inode ID 一致)。 因此, 可以直接通过 ``/usr/local`` 访问到 ``Data`` 卷中对应目录的内容。
+
+* ``Recovery``, ``Preboot`` 和 ``VM`` 卷: 用于操作系统 recovery 等功能, 具体情况没有公开。
+
+APFS 卷的信息可以通过 ``diskutil`` 命令查看。
