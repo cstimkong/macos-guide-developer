@@ -30,3 +30,5 @@ JDK 安装在 ``/Library/Java/JavaVirtualMachines`` 目录下。一个 JDK 被�
                 ...
 
 在执行 ``/usr/bin`` 目录内的 Java 有关程序时, 会先定位具体的 JDK (如果 ``JAVA_HOME`` 环境变量已经设置, 则运行 JAVA_HOME 目录内的相关工具), 如果没有设置 JAVA_HOME 则在已经安装的 JDK 中寻找最合适的 JAVA_HOME (通过 ``/usr/libexec/java_home`` )。
+
+注意, 最近几个版本的 JDK 中已经不包含 ``pack200``, ``rmid`` 等工具。需要安装低版本的 JDK 才能使用 ``/usr/bin`` 中的相关命令启动对应的 JDK 工具。
